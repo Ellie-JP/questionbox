@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LIST APP</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/send_url.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="header-logo">Doctors</a>
+    </header>
+    <div class="container">
+      <div class="container-header">
+        <h1>検査結果</h1>
+      </div>
+      <div class="item-form-wrapper">
+        <p class="form-label">名前</p>
+        <form>
+          <!-- value属性を指定してください -->
+          <input type="text" value="<%= item.name %>">
+          <!-- <input type="submit" value="更新する"> -->
+          <p class="form-label">病名</p>
+          <input type="text" value="<%= item.Disease %>">
+          <!-- <input type="submit" value="更新する"> -->
+          <p class="form-label">服薬</p>
+          <input type="text" value="<%= item.medicine %>">
+          <!-- <input type="submit" value="更新する"> -->
+          <p class="form-label">応急処理</p>
+          <input type="text" value="<%= item.FirstAid %>">
+          <!-- <input type="submit" value="更新する"> -->
+          <p class="form-label">前回の検査結果</p>
+          <input type="text" value="<%= item.NewestResults %>">
+          <!-- <input type="submit" value="更新する"> -->
+        </form>
+      </div>
+      <a href="/index" class="cancel-button"></span>もどる</a>
+    </div>
+  </body>
+</html>
