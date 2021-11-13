@@ -4,10 +4,21 @@ const mysql = require('mysql');
 const app = express();
 
 
+//cors追加
+
+    var cors = require('cors');
+    const corsOptions = {
+      origin: '*',
+      optionsSuccessStatus: 200
+    }
+//cors要件追加
 app.use(cors({ origin: true, credentials: true }));
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
-
+// import cors from 'cors';
+app.use(cors({ origin: true, credentials: true }));
+// Access-Control-Allow-Origin: http://localhost:3001
+// Access-Control-Allow-Credentials: true
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -62,15 +73,6 @@ connection.query(
         }
       ]
     }
-//cors追加
-
-    var cors = require('cors');
-    const corsOptions = {
-      origin: '*',
-      optionsSuccessStatus: 200
-    }
-
-
 
     // Access-Control-Allow-Origin: https://trusted-one.co.jp // CORS を許可する Origin を明示的にする
     // Access-Control-Allow-Credentials: true
